@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{% static 'images/1415023-200.png' %}" type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/styles41.css' %}">
+        <style>
+            .footer {
+                position: fixed;
+                bottom: 0px;
+                font-family: Georgia, serif;
+                font-size: 16px;
+                color: white;
+                margin-left: 500px;
+
+            }
+
+        </style>
+
+        <title>NIC Applicant form</title>
+
+    </head>
+
+    <body style="background-color: black;  color: white; font-size: x-large;" align="center">
+        <header>
+            <div class="header">
+
+                <div class="mydiv">
+                    <div class="div1" style="margin-left: 300px;"><a href="/" target="_blank"
+                            style="margin-left:90px; %}">Home</a></div>
+                    <div class="div4"><a href="/login">Register</a></div>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 50px; font-size: 50px;">Welcome to the online training by the tech committee!</h3>
+        </header>
+        <main>
+            <!-- {% comment %} /* mailto:jananipasham01@gmail.com */ {% endcomment %} -->
+            <form action="/" method="POST" enctype="multipart/form-data" name="EmailForm">
+            {% csrf_token %}
+                <strong style="font-size:30px; background-color:chartreuse;"> <b><i>Applicant Registration </b></i>
+                </strong>
+                <br>
+                <hr>
+                <table
+                    style="color: black; background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1opqlDpiyEWPO8Z1B_2OvCyWzromo1437g&usqp=CAU');background-repeat: no-repeat; background-size: cover; text-align: left; border: 1px solid black; border-spacing: 25px;"
+                    align="center">
+                    <!---------------------------NAME-------------------------------->
+                    <tr>
+                        <td><b>Name of the NIC Applicant: </b></td>
+                        <td><input type="text" id="first name" name="firstName" placeholder="Type your First name"
+                                maxlength="40" minlength="2"
+                                style="width: 240px; height:30px; font-size: 20px; margin:0%;" required>
+                            <input type="text"
+                            name="lastName" id="last name" placeholder="Type your Last name" maxlength="40"
+                                minlength="2" style="width: 240px; height:30px; font-size: 20px; margin:0%;"
+                                required><br>
+                            <label for="first name" style="margin: 0px 140px 0px 0px;">First Name</label>
+                            <label for="last name" name="lastName">Last Name</label>
+                        </td>
+                    </tr>
+                    <!--------------------------PASSWORD------------------------------>
+                    <tr>
+
+                        <td><b>Password: </b></td>
+                        <td><input type="password" name="password" placeholder="Type your password"
+                                style="width: 350px; height:30px; font-size: 20px;"
+                                pattern="(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required
+                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+                        </td>
+                    </tr>
+                    <!--------------------------NIC Designation------------------>
+
+                    <tr>
+                        <td><b>Designation Of the NIC Applicant: </b></td>
+                        <td><input type="text" name="designation" placeholder="Type your Designation"
+                                style="width: 350px; height:30px; font-size: 20px;" required></td>
+                    </tr>
+
+                    <!-----NIC Posting Headquarters------>
+                    <tr>
+                        <td><b>Posting Headquarters of NIC Applicant: </b></td>
+                        <td><input type="text" 
+                        name="posting" placeholder="Type your Posting Headquarters"
+                                style="width: 350px; height:30px; font-size: 20px;" required></td>
+                    </tr>
+                    <!---------------------Post held---------------->
+                    <tr>
+                        <td><b>Post held: </b></td>
+                        <td><input type="text" name="postHeld" placeholder="Type the post held"
+                                style="width: 350px; height:30px; font-size: 20px;" required></td>
+                    </tr>
+                    <!-------------------------NIC RO---------------------->
+                    <tr>
+                        <td><b>Name of NIC Reporting Officer(RO): </b></td>
+                        <td><input type="text" name="reportingOfficer" placeholder="Enter the NIC RO"
+                                style="width: 350px; height:30px; font-size: 20px;" min="2021" max="2024"></td>
+                    </tr>
+
+                    <!----------------------- Event---------------------------->
+                    <tr>
+                        <td><b>Choose the Event: </b></td>
+                        <td>
+                            <select name="event" id="Event" style="width: 350px; height:30px; font-size: 20px;"
+                                required>
+                                <option value="Training">Training</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Seminar">Seminar</option>
+                                <option value="Conference">Conference</option>
+                                <option value="Publication">Publication</option>
+                                <option value="Exhibition">Exhibition</option>
+                                <option value="Hackathon">Hackathon</option>
+                                <option value="Symposiums">Symposiums</option>
+                                <option value="Colloquiums">Colloquiums</option>
+                                <option value="Colloquiums">Others</option>
+                            </select>
+
+                            <!----------------------------Theme------------------------------>
+                    <tr>
+                        <td><b>Theme: </b></td>
+                        <td style="padding:0px;">
+                            <ul type="none">
+                                <li>
+                                    <input type="radio" name="Theme" value="IT Related" />
+                                    IT Related
+                                </li>
+                                <li><input type="radio" name="Theme" value="NIC related core activities" />
+                                    NIC related core activities</li>
+                                <li><input type="radio" name="Theme" value="Intnl character" />
+                                    Intnl character</li>
+                                <li><input type="radio" name="Theme" value="National importance in IT" />
+                                    National importance in IT </li>
+                                <li><input type="radio" name="Theme" value="Initiated by GoI" />
+                                    Initiated by GoI </li>
+                                <li><input type="radio" name="Theme" value="Others" />
+                                    Others</li>
+                            </ul>
+                    </tr>
+                    <!-----------------------Title---------------------------->
+                    <tr>
+                        <td><b>Title: </b></td>
+                        <td><input type="text" name="title" placeholder="Type your Title"
+                                style="width: 350px; height:30px; font-size: 20px;" required></td>
+                    </tr>
+                    <!------------------------------EMAIL------------------------------>
+                    <tr>
+                        <td><b>Email: </b></td>
+                        <td><input type="email" name="email" maxlength="40" placeholder="Enter a valid email id"
+                                style="width:240px; height:30px; font-size: 20px;" required />
+                            (Must contain @something.com)
+                        </td>
+                    </tr>
+
+                    <!-----------------ADDRESS---------------------->
+
+                    <tr>
+                        <td><b>Address of participant: </b></td>
+                        <td><input type="text" name="streetAddress" id="street address" maxlength="60"
+                                style="width: 400px; height:30px; font-size: 20px;"><br>
+                            <label for="street address">Street Address</label><br><br>
+                            <input type="text" name="streetAddress2" name="street address line 2" id="street address line 2" maxlength="60"
+                                style="width: 400px; height:30px; font-size: 20px;"><br>
+                            <label for="street address line 2">Street address line 2</label><br><br>
+                            <input type="text" name="city" id="city" maxlength="60"
+                                style="width: 160px; height:30px; font-size: 20px; margin:0px 70px 0px 0px;">
+                            <input type="text" name="street" id="street" maxlength="60"
+                                style="width: 160px; height:30px; font-size: 20px; "><br>
+                            <label for="city" name="city" style="margin:0px 200px 0px 0px;">city</label>
+                            <label for="street">Street/Province</label><br><br>
+                            <input type="text" name="Postal" id="Postal" maxlength="60"
+                                style="width: 120px; height:30px; font-size: 20px;"><br>
+                            <label for="Postal">Postal/Zip</label><br>
+                        </td>
+
+                    </tr>
+
+                    <!---------------------DATE OF BIRTH------------------------------>
+                    <tr style=" width: 120px; height:30px; font-size: 20px;">
+                        <td><b>Date Of Birth: </b></td>
+                        <td><select name="Day" id="Bday_Day" style="width: 120px; height:30px; font-size: 20px;">
+                                <option value="-1">Day:</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select name="Month" id="Bday_Month" style="width: 120px; height:30px; font-size: 20px;">
+                                <option value="-1">Month:</option>
+                                <option value="January">Jan(1)</option>
+                                <option value="February">Feb(2)</option>
+                                <option value="March">Mar(3)</option>
+                                <option value="April">Apr(4)</option>
+                                <option value="May">May(5)</option>
+                                <option value="June">Jun(6)</option>
+                                <option value="July">Jul(7)</option>
+                                <option value="August">Aug(8)</option>
+                                <option value="September">Sep(9)</option>
+                                <option value="October">Oct(10)</option>
+                                <option value="November">Nov(11)</option>
+                                <option value="December">Dec(12)</option>
+                            </select>
+                            <select name="Year" id="Bday_Year" style="width: 120px; height:30px; font-size: 20px;">
+                                <option value="-1">Year:</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--In the above we can use input type="date" for getting the user's input of date of birth-->
+                    <tr>
+                        <td><b>Where did you hear about this virtual event?</b></td>
+                    </tr>
+
+                    <!----------------------CHECKBOX------------------------------>
+
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="Facebook" id="Facebook">Facebook<br>
+                            <input type="checkbox" name="Youtube" id="Youtube">Youtube<br>
+                            <input type="checkbox" name="Instagram" id="Instagram">Instagram<br>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="Twitter" id="Twitter">Twitter<br>
+                            <input type="checkbox" name="Online ads" id="Online ads">Online ads<br>
+                            <input type="checkbox" name="Search Engine" id="Search Engine">Search Engine<br>
+                        </td>
+                    </tr>
+
+                    <!-------------------------------Methodology-------------------------->
+                    <tr>
+                        <td><b>Methodology: </b></td>
+                        <td>
+                            <input type="radio" name="Methodology" value="In-Person" />
+                            In-Person<br>
+                            <input type="radio" name="Methodology" value="VC" />
+                            VC<br>
+                            <input type="radio" name="Methodology" value="webcast" />
+                            webcast<br>
+                            <input type="radio" name="Methodology" value="Interactive Sessions" />
+                            Interactive Sessions<br>
+                            <input type="radio" name="Methodology" value="Oral" />
+                            Oral<br>
+                            <input type="radio" name="Methodology" value="Paper" />
+                            Paper<br>
+                            <input type="radio" name="Methodology" value="Poster" />
+                            Poster<br>
+                            <input type="radio" name="Methodology" value="Publication" />
+                            Publication<br>
+                            <input type="radio" name="Methodology" value="Lab Sessions" />
+                            Lab Sessions<br>
+                            <input type="radio" name="Methodology" value="Others" />
+                            Others<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Important Points to Note</b></td>
+                        <td>
+                            <ul>
+                                <li>Submit this form before 4th October
+                                <li>Make payment within 9 days of submission
+                                <li>Go through video and website for more details
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Any questions or comments?</b></td>
+                    </tr>
+                    <tr>
+                        <td><textarea name="Comments" rows="10" cols="80" placeholder="Enter your query"
+                                style="font-size:large;"></textarea></td>
+                        <td><img src="{% static 'images\image.png' %}"
+                                style="width:600px; height:200px; padding-left:60px; margin-right:40px;"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Which domains do you want to choose?</strong></td>
+                    </tr>
+                    <!------------------------CHECKBOX-------------------------------------------->
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="web development" id="web development">Web Development<br>
+                            <input type="checkbox" name="AI/ML" id="AI/ML">AI/ML<br>
+                            <input type="checkbox" name="Cloud computing" id="Cloud computing">Cloud computing<br>
+                            <input type="checkbox" name="Android development" id="Android development">Android
+                            development<br>
+
+                        </td>
+                    </tr>
+                    <!-----------------------------LinkedIn link---------------------------------->
+                    <tr>
+                        <td>
+                            <b>Linked Profile Id: </b>
+                        </td>
+                        <td>
+                            <input type="url" name="Linkedin" id="Linkedin"
+                                style="width: 300px; height:20px; font-size: 20px;"><br>
+
+                            <label for="Linkedin">LinkedIn link</label>
+                        </td>
+                    </tr>
+                    <!----------------------------------File Upload-------------------------------->
+                    <tr>
+                        <td>
+                            <b>Upload Your Resume/Work Experience File:</b>
+                        </td>
+                        <td>
+                            <input type="file" id="myFile" name="filename"
+                                style="width: 400px; height:40px; font-size: 15px;">
+                        </td>
+                    </tr>
+                    <!-----------------------------TERMS AND CONDITIONS---------------------------->
+                    <tr>
+                        <td>
+                            <b>Do You Agree To the Terms and Conditions?</b>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="Agree" value="Agree" required />I Agree to the Terms and
+                            Conditions
+
+
+                        </td>
+                    </tr>
+
+                    <!-------------------------------SUBMIT AND RESET ------------------------------>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <br>
+                            <input type="submit" value="Submit" style="width: 120px; height:30px; font-size: 20px;">
+                            <input type="reset" value="Reset" style="width: 120px; height:30px; font-size: 20px;">
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+
+        </main>
+        <br>
+        <hr>
+        <footer>
+            <h2 style="font-size:30px; color:greenyellow" align="center">How to win Hackathon</h2>
+
+            <iframe width="70%" height="700" src="https://www.youtube.com/embed/20ufPPnYoEk"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <hr>
+            <h2 style="font-size:30px; color:chartreuse" align="center">Everything About VIT and The Hackathon</h2>
+            <br><br>
+            <iframe height="600" width="1000" frameborder="0" src="https://girlknowstech.com/10-tips-win-hackathon/"
+                title="Tips and Tricks to win Hackathon"></iframe><br><br><br>
+            <h4 style="color: chartreuse">A Simple Java Podcast</h4>
+            <audio src="C:\Users\Dell\Desktop\New folder\lab experiment1\coderscampus40.mp3" controls>>A simple Java
+                Podcast</h1></audio>
+            <hr>
+            <h2 style="font-size:30px; color:chartreuse" align="center">Contact Us</h2>
+
+            <p>
+            <ul style="text-align: left;">
+                <li><a href="https://www.nic.in/" target="_blank"><u>Our website</u></a></li>
+                <li>NIC</li>
+                <li>Hyderabad</li>
+                <li>Telangana, India</li>
+                <li>Tel: 91-416-2243091 / 93</li>
+                <li>Fax: 91-416-2243092</li>
+                <li>91-416-2240411</li>
+            </ul>
+            </p>
+            <div class="footer" style="margin-left: 0em;">
+                Copyright &copy; NIC
+            </div>
+
+
+
+        </footer>
+    </body>
+
+</html>

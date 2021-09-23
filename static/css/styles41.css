@@ -1,0 +1,114 @@
+body{
+    background-color: black;
+}
+
+.mydiv
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 900px;
+    background-color: black;
+
+}
+
+
+.mydiv > div
+{
+   
+   color: white;
+   margin: 20px;
+   font-size: 25px;
+   font-weight: bolder;
+
+}
+a:link {
+    color:green;
+    text-decoration: none;
+
+}
+
+a:visited{
+    color:white;
+}
+a:hover{
+    color:turquoise;
+    text-decoration: none;
+}
+a:active{
+    color:rgb(134, 49, 130);
+    text-decoration: underline;
+}
+#images4{
+    width:400px;
+    height:200px;
+    display:inline-block;
+    margin:60px 0px 0px 0px;
+}
+h2{
+    color: white;
+    font-size: 80px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin:0px
+}
+h1{
+    color: white;
+    font-size: 80px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin:0px;
+}
+h4{
+    color: white;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+h3{
+    color: white;
+    font-size: large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+
+}
+button{
+    font-size: 24px;
+    width: 200px;
+    height:50px;
+    color: white;
+    background-color: greenyellow;
+    border-radius: 40px;
+}
+.multicolor
+{
+    background-image: linear-gradient(rgb(4, 175, 4),rgb(48, 47, 47),white);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+        
+}
+hr{
+    border: 1px dotted;
+    border-style: dotted none none; 
+    color: rgb(227, 231, 231);
+    border-width: 10px;
+    position: realtive;
+    width: cover;
+}
+
+article{
+    color:white;
+    font-size:18px;
+    text-align:justify;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin:40px 160px 0px 160px;
+}
+
+p{
+    color:white;
+    font-size: x-large;
+    font-weight: bolder;
+    font-style: italic;
+}

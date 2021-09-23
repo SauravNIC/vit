@@ -1,0 +1,144 @@
+.header
+{
+    top:0px;
+    position:fixed;
+
+}
+
+.class1
+{
+    position: relative;
+    margin-left:750px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+    padding-top: 0px;
+    font-family: Georgia, serif;
+    font-size:16px; 
+    color: white;
+
+
+}
+
+
+
+.mydiv
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 940px;
+    background-color: black;
+
+}
+
+
+.mydiv > div
+{
+   
+   color: white;
+   margin: 20px;
+   font-size: 25px;
+   font-weight: bolder;
+
+}
+
+.images{
+    border-radius: 150px;
+    width:300px;
+    height:300px;
+    margin: 40px 40px 40px 120px;
+    
+
+}
+
+
+a:link {
+    color:white;
+    text-decoration: none;
+
+}
+
+a:visited{
+    color:white;
+}
+a:hover{
+    color:turquoise;
+    text-decoration: none;
+}
+a:active{
+    color:rgb(243, 86, 139);
+    text-decoration: underline;
+}
+
+.footer
+{
+    position: fixed;
+    bottom:0px;
+    font-family: Georgia, serif;
+    font-size:16px; 
+    color: white;
+    margin-left:500px;
+    
+
+}
+
+#marquee {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background: #0c0c0c;
+    color: rgb(255, 251, 251);
+    border: 1px solid #4a4a4a;
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1opqlDpiyEWPO8Z1B_2OvCyWzromo1437g&usqp=CAU'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#marquee p {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scroll-left 2s linear infinite;
+    -webkit-animation: scroll-left 2s linear infinite;
+    animation: scroll-left 10s linear infinite;
+}
+
+@-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+  
+
